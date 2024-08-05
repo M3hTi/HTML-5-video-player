@@ -9,6 +9,9 @@ const ranges = player.querySelectorAll('.playerSlider')
 const progress = player.querySelector('.progress')
 const progressBar = player.querySelector('.progressField')
 
+const skipButtons = player.querySelectorAll('.js-skip')
+console.dir(skipButtons)
+
 
 const fullScreenButton = player.querySelector('.fullScreen-btn')
 // console.dir(fullScreenButton)
@@ -61,6 +64,28 @@ function scrub(e) {
 }
 
 
+// function skip button
+function skip() {
+    // console.log("skipped");
+    const value = this.dataset.skip;
+    console.log(value);
+    // console.log(typeof(value));
+    video.currentTime += Number(value);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // function full screen
 let isFullScreen = false;
 function toggleFullScreen() {
@@ -96,6 +121,14 @@ progress.addEventListener('click', scrub)
 progress.addEventListener('mousemove', (e) => mouseDown && scrub(e))
 progress.addEventListener('mousedown', () => mouseDown = true)
 progress.addEventListener('mouseup',() => mouseDown = false)
+
+
+// for skipbuttonss
+skipButtons.forEach((skipButton) => {
+    skipButton.addEventListener('click', skip)
+})
+
+
 
 
 
