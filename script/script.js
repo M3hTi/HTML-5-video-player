@@ -1,16 +1,16 @@
 // get Elements first
 const player = document.querySelector('.player')
 const video = player.querySelector('.viewer')
-console.dir(video)
+// console.dir(video)
 const toggleButton = player.querySelector('.toggle')
-console.dir(toggleButton)
+// console.dir(toggleButton)
 const ranges = player.querySelectorAll('.playerSlider')
 // console.dir(ranges)
 const progress = player.querySelector('.progress')
 const progressBar = player.querySelector('.progressField')
 
 const skipButtons = player.querySelectorAll('.js-skip')
-console.dir(skipButtons)
+// console.dir(skipButtons)
 
 
 const fullScreenButton = player.querySelector('.fullScreen-btn')
