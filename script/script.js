@@ -6,8 +6,16 @@ const toggleButton = player.querySelector('.toggle')
 console.dir(toggleButton)
 const ranges = player.querySelectorAll('.playerSlider')
 // console.dir(ranges)
-const progress = document.querySelector('.progress')
-const progressBar = document.querySelector('.progressField')
+const progress = player.querySelector('.progress')
+const progressBar = player.querySelector('.progressField')
+
+
+const fullScreenButton = player.querySelector('.fullScreen-btn')
+// console.dir(fullScreenButton)
+
+
+
+
 
 // build our functions
 // make a flag for video ; is it playing or not
@@ -53,6 +61,22 @@ function scrub(e) {
 }
 
 
+// function full screen
+let isFullScreen = false;
+function toggleFullScreen() {
+    // console.log('Fullscreen button clicked');
+    if (!isFullScreen) {
+        // console.log('Entering fullscreen');
+        player.requestFullscreen();
+        isFullScreen = true;
+    } else {
+        // console.log('Exiting fullscreen');
+        document.exitFullscreen();
+        isFullScreen = false;
+    }
+}
+
+
 
 
 
@@ -72,6 +96,11 @@ progress.addEventListener('click', scrub)
 progress.addEventListener('mousemove', (e) => mouseDown && scrub(e))
 progress.addEventListener('mousedown', () => mouseDown = true)
 progress.addEventListener('mouseup',() => mouseDown = false)
+
+
+
+// for full-screen button
+fullScreenButton.addEventListener('click', toggleFullScreen)
 
 
 
